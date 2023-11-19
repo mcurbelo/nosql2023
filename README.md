@@ -30,3 +30,19 @@
     "kilometro": 86, // Integer, Opcional
   }
 ```
+* **POST /direcciones-ordenadas**: Endpoint para obtener direcciones que cumplan con _cualquiera_ de los criterios enviados
+  ```
+    {
+      "barrio" :"Centro", // String, Opcional
+      "localidad:"Montevideo", // String, Opcional
+      "departamento": "San José" // String, opcional
+    }
+  ```
+
+* **GET /direcciones-usuario**: Endpoint para obtener todas las direcciones asociadas con un usuario
+  ```
+    GET /direcciones-usuario?ciUsuario=12345678&page=2&results=4
+    ciUsuario: Obligatorio. Cédula del usuario del cual solicitamos las direcciones. Obligatorio
+    page: Opcional. Numero de página cuyos resultados queremos. Por defecto se tomará 1
+    results: Opcional. Numero de resultados (Direcciones) por página. Por defecto se tomará 20
+  ```
