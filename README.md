@@ -10,7 +10,7 @@
 Luego de esto, el servidor estará disponible en la dirección local en el puerto 3000 (`http://127.0.0.1:3000`)
 
 # Lenguaje
-El lenguaje utilizado para desarrollar la aplicación es TypeScript sobre el runtime NodeJS. Se utilizó la base de datos MongoDB.
+El lenguaje utilizado para desarrollar la aplicación es TypeScript sobre el runtime NodeJS. Se utilizó la base de datos MongoDB. Ademas, se utilizó Redis como base de datos clave-valor a modo de Cache, la cual se utiliza para guardar temporalmente los datos de la consulta `/direcciones-ordenadas`. Vale la pena mencionar que en un ambiente de producción, Redis deberîa configurarse de tal manera que estos datos sean invalidados después de cierto tiempo o cuando se de alguna condición.
 
 ## Modelo logico 
 El modelo logico elegido para relacionar las direcciones y los usuarios es la relación por referencia, en la cual cada dirección contiene un atributo referenciando el usuario al que pertenece. Esto es debido a que se deben realizar operaciones de filtrado directamente sobre las direcciones, y mantener todas las direcciones en una única colección permite una ventaja de performance frente a una relación embebida.
