@@ -7,6 +7,15 @@
   cd nosql2023
   docker compose up
 ```
+Luego de esto, el servidor estará disponible en la dirección local en el puerto 3000 (`http://127.0.0.1:3000`)
+
+# Lenguaje
+El lenguaje utilizado para desarrollar la aplicación es TypeScript sobre el runtime NodeJS. Se utilizó la base de datos MongoDB.
+
+## Modelo logico 
+El modelo logico elegido para relacionar las direcciones y los usuarios es la relación por referencia, en la cual cada dirección contiene un atributo referenciando el usuario al que pertenece. Esto es debido a que se deben realizar operaciones de filtrado directamente sobre las direcciones, y mantener todas las direcciones en una única colección permite una ventaja de performance frente a una relación embebida.
+
+<img width="600" alt="Screenshot 2023-11-22 at 20 06 32" src="https://github.com/mcurbelo/nosql2023/assets/60516595/03f1c083-e089-49f9-b1da-b282a942c8b0">
 
 ### Endpoints y descripción de sus parametros
 
