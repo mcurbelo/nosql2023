@@ -1,0 +1,138 @@
+{
+	"info": {
+		"_postman_id": "b74f1ce4-aab1-4552-8c6f-9cb42e4bb5f6",
+		"name": "noSQL Tecnoinf",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Direcciones Usuario",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/direcciones-usuario?ciUsuario=51627289&page=1&results=20",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"direcciones-usuario"
+					],
+					"query": [
+						{
+							"key": "ciUsuario",
+							"value": "51627289"
+						},
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "results",
+							"value": "20"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Direcciones por criterio",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"barrio\":\"Centro\",\n    \"localidad\" :\"Montevideo\",\n    \"departamento\":\"San José\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/direcciones-ordenadas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"direcciones-ordenadas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Agregar direccion",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"ciUsuario\":\"51627289\",\n    \"address\" : {\n        \"departamento\": \"Montevideo\",\n        \"localidad\": \"Montevideo\",\n        \"calle\": \"18 de Julio\",\n        \"numero\": 2204,\n        \"padron\": \"A6745\",\n        \"ruta\": \"63B\",\n        \"letra\": \"B\",\n        \"barrio\": \"Centro\",\n        \"apartamento\": \"311C\",\n        \"kilometro\": 86\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/agregar-domicilio",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"agregar-domicilio"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Agregar usuario",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nombre\":\"Mauro\",\n    \"apellido\":\"Curbelo\",\n    \"edad\":29,\n    \"ci\":\"51627289\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/agregar-usuario",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"agregar-usuario"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
